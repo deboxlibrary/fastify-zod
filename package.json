@@ -1,5 +1,5 @@
 {
-  "name": "@basil.health/fastify-zod",
+  "name": "@deboxsoft/fastify-zod",
   "version": "1.0.6",
   "description": "Zod integration with Fastify",
   "main": "build/index.js",
