@@ -1,5 +1,5 @@
 import { z, ZodType } from "zod";
-import zodToJsonSchema from "zod-to-json-schema";
+import { zodToJsonSchema } from "zod-to-json-schema";
 
 import { Models, SchemaKeyOrDescription } from "./Models";
 export type BuildJsonSchemasOptions = {
@@ -37,7 +37,6 @@ export const buildJsonSchemas = <M extends Models>(
   const zodSchema = z.object(models);
 
   const $id = opts.$id ?? `Schema`;
-
   const zodJsonSchema = zodToJsonSchema(zodSchema, {
     target: opts.target,
     basePath: [`${$id}#`],

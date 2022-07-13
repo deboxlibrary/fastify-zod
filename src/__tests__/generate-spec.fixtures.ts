@@ -1,11 +1,16 @@
 import { writeFile } from "fs/promises";
-import { join } from "path";
+import path, { join } from "path";
+import { fileURLToPath } from "url";
 
 import { buildJsonSchemas } from "..";
 
 import { models } from "./models.fixtures";
 import { createTestServer, openApiOptions } from "./server.fixtures";
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __filename = fileURLToPath(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/naming-convention
+const __dirname = path.dirname(__filename);
 const main = async (): Promise<void> => {
   const f = createTestServer(
     {},
@@ -36,8 +41,10 @@ const main = async (): Promise<void> => {
       method: `get`,
       url: `/documentation_transformed/json`,
     })
-    .then((res) => res.body);
-
+    .then((res) => {
+      return res.body;
+    });
+    
   await writeFile(
     join(__dirname, `..`, `..`, `openapi.transformed.json`),
     transformedSpecJson,

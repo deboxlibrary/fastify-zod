@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "es2019" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */,
-    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+    "target": "ESNext" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */,
+    "module": "esnext" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
     "lib": [
       "es2019",
       "ESNext",
-      "DOM", // for Fetch API
+      "DOM" // for Fetch API
     ] /* Specify library files to be included in the compilation. */,
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true /* Report errors in .js files. */,
@@ -17,9 +17,7 @@
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     "outDir": "build" /* Redirect output structure to the directory. */,
     // "rootDir": "src" /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */,
-    "rootDirs": [
-      "src"
-    ],
+    "rootDirs": ["src"],
     // "composite": true /* Enable project compilation */,
     // "incremental": true /* Enable incremental compilation */,
     // "tsBuildInfoFile": "./.tsbuildinfo",               /* Specify file to store incremental compilation information */
@@ -62,13 +60,7 @@
     "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
     "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "build"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["node_modules", "build"],
   "compileOnSave": true
 }
